@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dl20es2gd7y7s"]
+
+[ext_resource type="Shader" path="res://onion.gdshader" id="1_fgg7e"]
+[ext_resource type="Shader" path="res://interlace8.gdshader" id="2_b0p5k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpguv"]
+shader = ExtResource("1_fgg7e")
+shader_parameter/A = 2.0
+shader_parameter/F = 3.0
+shader_parameter/S = 2.0
+shader_parameter/C = 1.0
+shader_parameter/tiled_factor = Vector2(10, 5)
+shader_parameter/aspect_ratio = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wjjx8"]
+load_path = "res://.godot/imported/stripe.png-f2f28094a21c1e5503d4da64a88e9b52.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0g8a1"]
+shader = ExtResource("2_b0p5k")
+shader_parameter/A = 1.0
+shader_parameter/F = 0.05
+shader_parameter/S = 0.1
+shader_parameter/C = 1.0
+shader_parameter/tiled_factor = Vector2(2, 32)
+shader_parameter/aspect_factor = 0.1
+shader_parameter/aspect_ratio = 0.1
+
+[node name="Background" type="Node2D"]
+
+[node name="onion" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xpguv")
+position = Vector2(197, 109)
+texture = SubResource("CompressedTexture2D_wjjx8")
+
+[node name="interlace8" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0g8a1")
+position = Vector2(197, 109)
+texture = SubResource("CompressedTexture2D_wjjx8")
