@@ -1,11 +1,11 @@
 # background-shaders
 Shaders made in Godot4. Transforms the stripe layer into different patterns.
 
-##Preview
+## Preview
 ![onion][]
 ![interlace8][]
 
-##Formula
+## Formula
 The shaders use an offset function with the forumula:
 Offset(c,t) = a * sin(f*c + s*t)
 
